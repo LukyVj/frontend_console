@@ -1,0 +1,172 @@
+@import "ovcss.scss";
+
+// All your CSS awesomeness here
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  background: $ct;
+  color: $w;
+}
+
+
+/* Jumbotron
+-----------------------------------------------------------------------*/
+.jumbotron{
+  height: 220px;
+  @include full-background(darken($g, 10%),"");
+  background-attachment: fixed;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0;
+
+  h1{
+
+    font-size: 4em;
+    vertical-align: middle;
+    margin-top: 0em;
+
+  }
+  h3{
+    vertical-align: middle;
+    padding-top: 0;
+    margin-top: -.8em;
+  }
+
+  .btn.call-to-action{
+    margin:5em auto;
+    width: 310px;
+    @include font-family(#{$font-name}-bold, $font-fallback, sans-serif);
+    font-size: 1em;
+  }
+  small{color:darken($g, 20%)}
+  // Anchor down
+  .anchor-down{
+    color: $white;
+    font-size: 2.2em;
+    @include square(1.8em);
+    background: rgba(255,255,255,.2);
+    padding: .4em .6em;
+    border-radius: 100%;
+    position: relative;
+    z-index: 1;
+
+    span{
+      padding-top: .4em;
+    }
+  }
+}
+
+
+/* Container
+------------------------------------------------------------------*/
+
+.container{
+  text-align: center;
+  .col-md-12{
+
+    section{
+      @include transition(box-shadow .15s ease);
+      min-height: 100px;
+      float: left;
+      height: auto;
+      width: 100%;
+      background: darken($y, 10%);
+      margin-top: 4em;
+      padding: .5em;
+      padding-bottom: 2em;
+      padding-left: 2.2em;
+      @include border-right-radius(24px);
+      box-shadow: inset 1em 0 0 darken($y, 16%);
+
+      &:hover{
+        box-shadow: inset 1em 0 0 lighten($y, 3%);
+      }
+
+      ul {
+        counter-reset: counterbase;
+        li{
+          list-style: none;
+
+          &:before{
+            content: counter(counterbase) ' > ';
+            counter-increment: counterbase;
+            font-size: 1.4em;
+            font-weight: bold;
+            line-height: 0.1;
+          }
+          &:first-child{
+            &:before{
+             content: counter(counterbase) '  > ';
+            }
+          }
+          a{
+            color: $y;
+            font-size: 1.3em;
+            line-height: 0;
+          }
+          &:hover{
+            &:before{
+              color: $y;
+            }
+            a{
+              color:lighten($y, 3%);
+              font-weight: bold;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+
+    &:last-child{
+
+      section{
+        margin-bottom: 4em;
+      }
+    }
+  }
+
+
+  .col-md-6{
+    box-shadow: inset 0 0 0 .3em darken($p, 16%);
+    padding: 3em;
+    text-align: center;
+    height: 100px;
+    border-radius: 6px;
+    width: 48%;
+    margin-right: 2%;
+    a{
+      line-height: 20px;
+      color: darken($p, 25%);
+      font-weight: bold;
+      font-size: 2.4em;
+    }
+
+    &:hover{
+          box-shadow: inset 0 0 0 .3em $y;
+    a{
+color: $y;
+}
+    }
+  }
+}
+
+
+/* Footer
+--------------------------------------------------------------------*/
+.footer{
+   @include full-background(darken($p, 10%),"");
+  background-attachment: fixed;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  height: 80px;
+  bottom: -1em;
+  width: 100%;
+  float: left;
+
+  p{
+    line-height: 80px;
+  }
+}

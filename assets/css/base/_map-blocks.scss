@@ -1,0 +1,233 @@
+$size-square: 5.6em;
+
+.square{
+  width:100%;
+  height:100%;
+  position:absolute;
+  z-index: 0;
+  left: 0;
+  top: 0;
+
+  [class*="block"]{
+    width:$size-square;
+    height:$size-square;
+    background: white;
+    display:block;
+    position:absolute;
+    margin: .1em;
+  }
+
+  &.block-bottom{
+    [class*="block"]{
+      bottom:0;
+    }
+  }
+  .left-side {
+    [class*="block"]{
+    width:$size-square;
+    height:$size-square;
+    display:block;
+    position:absolute;
+    margin: .1em;
+      &[class*="-0"]{
+        bottom:0;
+        left:0;
+      }
+      &[class*="-1"]{
+        left:$size-square;
+      }
+      &[class*="-2"]{
+        left:$size-square*2;
+      }
+      &[class*="-3"]{
+        left:$size-square*3;
+      }
+      &[class*="-4"]{
+        left:$size-square*4;
+      }
+      &[class*="-5"]{
+        left:$size-square*5;
+      }
+      &[class*="-6"]{
+        left:$size-square*6;
+      }
+      &[class*="1-"]{
+        bottom:$size-square;
+        &[class*="-0"]{
+          left:0;
+        }
+      }
+      &[class*="2-"]{
+        bottom:$size-square*2;
+        &[class*="-0"]{
+          left:0;
+        }
+        &[class*="-1"]{
+          left:$size-square;
+        }
+      }
+      &[class*="3-"]{
+        bottom:0;
+
+        &[class*="-0"]{
+          left:0;
+        }
+        &[class*="-1"]{
+          left:$size-square;
+        }
+        &[class*="-2"]{
+          left:$size-square*2;
+        }
+        &[class*="-4"]{
+          left:$size-square*4;
+        }
+      }
+
+      &[class*="4-"]{
+        bottom:$size-square;
+
+        &[class*="-0"]{
+          left:0;
+        }
+        &[class*="-1"]{
+          left:$size-square;
+        }
+        &[class*="-2"]{
+          left:$size-square*2;
+        }
+      }
+      &[class*="5-"]{
+        bottom:$size-square*2;
+
+        &[class*="-0"]{
+          left:0;
+        }
+        &[class*="-1"]{
+          left:$size-square;
+        }
+        &[class*="-2"]{
+          left:$size-square*2;
+        }
+      }
+
+      &[class*="6-"]{
+        bottom:$size-square*3;
+
+        &[class*="-0"]{
+          left:0;
+        }
+        &[class*="-1"]{
+          left:$size-square;
+        }
+        &[class*="-2"]{
+          left:$size-square*2;
+        }
+      }
+    }
+  }
+
+    .right-side {
+     [class*="block"]{
+    width:$size-square;
+    background: white;
+    display:block;
+    position:absolute;
+    margin: .1em;
+
+     &[class*="-0"]{
+        bottom:0;
+        right:0;
+      }
+      &[class*="-1"]{
+        right:$size-square;
+      }
+      &[class*="-2"]{
+        right:$size-square*2;
+      }
+      &[class*="-3"]{
+        right:$size-square*3;
+      }
+      &[class*="-4"]{
+        right:$size-square*4;
+      }
+      &[class*="-5"]{
+        right:$size-square*5;
+      }
+      &[class*="-6"]{
+        right:$size-square*6;
+      }
+      &[class*="1-"]{
+        bottom:$size-square;
+        &[class*="-0"]{
+          right:0;
+        }
+      }
+      &[class*="2-"]{
+        bottom:$size-square*2;
+        &[class*="-0"]{
+          right:0;
+        }
+        &[class*="-1"]{
+          right:$size-square;
+        }
+      }
+      &[class*="3-"]{
+        bottom:0;
+
+        &[class*="-0"]{
+          right:0;
+        }
+        &[class*="-1"]{
+          right:$size-square;
+        }
+        &[class*="-2"]{
+          right:$size-square*2;
+        }
+        &[class*="-4"]{
+          right:$size-square*4;
+        }
+      }
+
+      &[class*="4-"]{
+        bottom:$size-square;
+
+        &[class*="-0"]{
+          right:0;
+        }
+        &[class*="-1"]{
+          right:$size-square;
+        }
+        &[class*="-2"]{
+          right:$size-square*2;
+        }
+      }
+      &[class*="5-"]{
+        bottom:$size-square*2;
+
+        &[class*="-0"]{
+          right:0;
+        }
+        &[class*="-1"]{
+          right:$size-square;
+        }
+        &[class*="-2"]{
+          right:$size-square*2;
+        }
+      }
+
+      &[class*="6-"]{
+        bottom:$size-square*3;
+
+        &[class*="-0"]{
+          right:0;
+        }
+        &[class*="-1"]{
+          right:$size-square;
+        }
+        &[class*="-2"]{
+          right:$size-square*2;
+        }
+      }
+    }
+  }
+}

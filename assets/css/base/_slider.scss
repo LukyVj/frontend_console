@@ -1,0 +1,101 @@
+$testimonials-height: 496px;
+
+/* Slider
+-----------------------------------------------------------------------*/
+.slider{
+  width: 100%;
+  height: 100%;
+  float: left;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto 0 auto;
+  border-radius: 4px;
+
+  ul {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 200px;
+    list-style: none;
+
+    li{
+      position: relative;
+      display: block;
+      float: left;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 480px;
+      line-height: 300px;
+
+      &.active{
+        display: block;
+      }
+    }
+  }
+
+
+
+  // Slider cards
+  .slide{
+    max-width: 434px;
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    vertical-align:middle;
+    float: left;
+
+    p{
+      &:before,
+      &:after{
+        content:'"';
+      }
+    }
+    img{
+      @include square(54px);
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 4px rgba(white, .4);
+      border-radius: 100%;
+      margin-right: 1.4em;
+    }
+
+  }
+
+
+
+  .slider_indicator{
+    width: 100%;
+    text-align: center;
+    position: relative;
+    margin-top: $testimonials-height - 100px;
+    .bullets{
+      width: 100px;
+      margin: auto;
+      span.bullet{
+        @include square(1em);
+        background: transparent;
+        display: inline-block;
+        float:left;
+        border-radius: 100%;
+        margin:auto .4em;
+        box-shadow: 0 0 0 2px rgba(white, .9);
+
+        &.active,
+        &:hover{
+          background: white;
+        }
+        &:hover{
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+

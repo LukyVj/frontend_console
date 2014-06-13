@@ -1,0 +1,33 @@
+/* ====================================================================================================
+Animations : Define CSS3 keyframes animations
+======================================================================================================*/
+
+@include keyframes(load-one){
+
+  25%{
+  	opacity: 1;
+  }
+  50%{
+  	opacity: .4;
+  }
+}
+
+@include keyframes(load-two){
+  50%{
+  	opacity: 1;
+  }
+  75%{
+  	opacity: .4
+  }
+}
+
+@include keyframes(load-three){
+  75%{
+  	opacity: 1;
+  }
+  100%{
+  	opacity: .4;
+  }
+}
+
+
