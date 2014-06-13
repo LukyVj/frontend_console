@@ -1722,10 +1722,13 @@ Buttons : Here is the main buttons stylesheet
   background: transparent;
   min-width: 45%;
   margin: 2em auto; }
+  .btn a {
+    color: #f3f3f5; }
   .btn:hover {
     background: #f3f3f5;
-    border-color: #f3f3f5;
-    color: #83bc49; }
+    border-color: #f3f3f5; }
+    .btn:hover a {
+      color: #83bc49; }
   .btn.call-to-action {
     background: #f3f3f5;
     border: none;
@@ -2315,6 +2318,8 @@ html[data-debug="true"] #debugWindow {
 body {
   background: #83bc49;
   color: #f3f3f5; }
+  body a {
+    color: #7f40bf; }
 
 /* Jumbotron
 -----------------------------------------------------------------------*/

@@ -6,6 +6,8 @@
 body {
   background: $ct;
   color: $w;
+
+  a{color:lighten($p,10%)}
 }
 
 

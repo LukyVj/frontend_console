@@ -7,11 +7,12 @@ Buttons : Here is the main buttons stylesheet
   background: transparent;
   min-width: 45%;
   margin: 2em auto;
+  a{color:$w;}
 
   &:hover{
     background: $w;
     border-color:$w;
-    color: $g;
+    a{color: $g;}
   }
 
 
