@@ -94,6 +94,10 @@
   background: $fallback-color url($url)no-repeat center center;
   background-size:cover;
 }
+@mixin contain-background($fallback-color, $url){
+  background: $fallback-color url($url)no-repeat center center;
+  background-size:65%;
+}
 
 
 @mixin icon-background($url){
@@ -101,3 +105,17 @@
   background-size:contain;
 }
 
+
+/* Helper & debug mixins
+----------------------------------------------------------------*/
+
+/* Grid
+---------------------------------------------------------------*/
+@mixin simpleGrid($size-y,$size-x, $colorGrid, $bgColor) {
+background:
+linear-gradient(180deg, transparent 0px, rgba($colorGrid, .5)  1px, transparent 0px),
+linear-gradient(90deg, transparent 0px, rgba($colorGrid, .5) 1px, transparent 0px);
+
+background-size: $size-x $size-x, $size-y $size-y;
+background-color: $bgColor;
+}

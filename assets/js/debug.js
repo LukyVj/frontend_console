@@ -138,7 +138,7 @@ $(document).ready(function(){
 
   function debugBox(){
   $('html').attr('data-debug','true');
-  var boxDebug = '<div id="debugWindow"><p>Remove CSS animations & transitions : <span class="css-choice"><span class="fa fa-check" style="color:lime"></span><span class="fa fa-times" style="color:red"></span></span><br>Remove JS Debugger :<span class="js-choice"><span class="fa fa-check" style="color:lime"></span><span class="fa fa-times" style="color:red"></span></span></p></div>';
+  var boxDebug = '<div id="debugWindow"><p>CSS animations & transitions : <span class="css-choice"><span class="fa fa-check" style="color:lime"></span><span class="fa fa-times" style="color:red"></span></span><br>Frontend Logs :<span class="js-choice"><span class="fa fa-check" style="color:lime"></span><span class="fa fa-times" style="color:red"></span></span><br>Debug grid :<span class="grid-choice"><span class="fa fa-check" style="color:lime"></span><span class="fa fa-times" style="color:red"></span></span></p></div>';
   $('html[data-debug*="true"] body').append(boxDebug);
   var addCSSDebug = $('#debugWindow').find('span.css-choice span.fa-check');
   var rmCSSDebug = $('#debugWindow').find('span.css-choice span.fa-times');
@@ -146,45 +146,63 @@ $(document).ready(function(){
   var addJSDebug = $('#debugWindow').find('span.js-choice span.fa-check');
   var rmJSDebug = $('#debugWindow').find('span.js-choice span.fa-times');
 
+  var addGRDebug = $('#debugWindow').find('span.grid-choice span.fa-check');
+  var rmGRDebug = $('#debugWindow').find('span.grid-choice span.fa-times');
+
   addCSSDebug.fadeOut(0);
     addCSSDebug.on('click', function(){
       $(this).fadeOut(0);
-      $('html').attr('data-debug','true');
-      log.msg('debug added');
+      $('html[data-debug="true"] body').attr('data-debug-animation','false');
+      log.msg('CSS Animations added');
       rmCSSDebug.fadeIn('fast');
     });
     rmCSSDebug.on('click', function(){
       $(this).fadeOut(0);
-      $('html').attr('data-debug','false');
-     log.msg('debug removed');
+      $('html[data-debug="true"] body').attr('data-debug-animation','true');
+     log.msg('CSS Animations removed');
       addCSSDebug.fadeIn('fast');
     });
 
     addJSDebug.fadeOut(0);
     addJSDebug.on('click', function(){
       $(this).fadeOut(0);
-      $('html').attr('src','#');
-     log.msg('debug added');
+      $('html[data-debug="true"] body').attr('data-frontend-logs','false');
+      log.msg('Frontend logs Removed');
       rmJSDebug.fadeIn('fast');
     });
     rmJSDebug.on('click', function(){
       $(this).fadeOut(0);
-      $('#debugger').attr('src','#');
-     log.msg('debug removed');
+      $('html[data-debug="true"] body').attr('data-frontend-logs','true');
+      log.msg('Frontend logs Added');
       addJSDebug.fadeIn('fast');
+
+      debug();
+    });
+
+    addGRDebug.fadeOut(0);
+    addGRDebug.on('click', function(){
+      $(this).fadeOut(0);
+      $('html[data-debug="true"] body').attr('data-debug-grid','false');
+     log.msg('Debug grid removed');
+      rmGRDebug.fadeIn('fast');
+    });
+    rmGRDebug.on('click', function(){
+      $(this).fadeOut(0);
+      $('html[data-debug="true"] body').attr('data-debug-grid','true');
+     log.msg('Debug grid added');
+      addGRDebug.fadeIn('fast');
     });
 }
 
 function deploy(){
   // Debug functions
-  //debugBox();
-  debug();
+  debugBox();
 }
 
 
 
 deploy();
 // Expose jQuery to the global object
-return (window.jQuery = window.$ = jQuery);
+// return (window.jQuery = window.$ = jQuery);
 
 });
